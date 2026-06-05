@@ -100,7 +100,7 @@
             padding: 0 2.5rem;
         }
 
-        .nav-logo img { height: 38px; width: auto; }
+        .nav-logo img { height: 42px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -171,6 +171,7 @@
             height: 150px;
             width: auto;
             margin: 0 auto;
+            filter: brightness(0) invert(1) sepia(1) saturate(0.3) brightness(1.15);
         }
 
         .hero-eyebrow {
@@ -654,13 +655,11 @@
             gap: 1.5rem;
         }
         .footer-brand {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2rem;
-            letter-spacing: -0.01em;
-            text-transform: uppercase;
-            color: var(--cream);
             text-decoration: none;
+        }
+        .footer-brand img {
+            height: 36px;
+            width: auto;
         }
         .footer-links {
             display: flex;
@@ -746,12 +745,7 @@
 <!-- ===== NAV ===== -->
 <nav>
     <a href="#" class="nav-logo">
-        <!--
-            Place your logo image at: assets/images/logo-full.png
-            This should be the horizontal circle + wordmark combo (cream background version)
-            For best results: ~200×50px PNG with cream background
-        -->
-        <img src="assets/images/logo-full.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <img src="assets/images/frank-text-icon.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;text-transform:uppercase;letter-spacing:-0.01em;color:var(--charcoal);">frank</span>
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
@@ -770,12 +764,7 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
     <div class="hero-mark">
-        <!--
-            Place circle logo at: assets/images/logo-circle.png
-            This is the Frank illustration in a cream circle with dark border
-            On the dark hero background it reads as a stamp/seal — intentional
-        -->
-        <img src="assets/images/logo-circle.png" alt="Frank" onerror="this.style.display='none'">
+        <img src="assets/images/frank-icon-transparent.png" alt="Frank" onerror="this.style.display='none'">
     </div>
     <p class="hero-eyebrow">For Australian Homeowners</p>
     <h1>Your Home.<br><em>Your Standards.</em></h1>
@@ -819,7 +808,7 @@
         Place the family photo at: assets/images/frank-family.jpg
         This is the vintage 1960s colour photo of Frank Hall and family
     -->
-    <img src="assets/images/frank-family.jpg" alt="Frank Hall and family">
+    <img src="assets/images/familyphoto.jpg" alt="Frank Hall and family">
     <div class="photo-break-overlay">
         <div class="photo-break-quote">
             <blockquote>"You're only as good as your word and your actions."</blockquote>
@@ -846,7 +835,7 @@
             </div>
             <div class="about-photo-wrap">
                 <div class="about-photo-inner">
-                    <img src="assets/images/frank-family.jpg" alt="Frank Hall and family, circa 1965">
+                    <img src="assets/images/familyphoto.jpg" alt="Frank Hall and family, circa 1965">
                 </div>
                 <p class="photo-caption">Frank Hall &amp; family — respected builder, 1950s–1980s</p>
             </div>
@@ -991,7 +980,10 @@
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-inner">
-        <a href="#" class="footer-brand">frank</a>
+        <a href="#" class="footer-brand">
+            <img src="assets/images/frank-text-light.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+            <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--cream);">frank</span>
+        </a>
         <div class="footer-links">
             <a href="#about">About</a>
             <a href="#how">How it Works</a>
