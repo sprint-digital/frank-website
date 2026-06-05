@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank — Your Home. Your Standards.</title>
+    <meta name="description" content="Frank helps Australian homeowners navigate tradies, contracts, and building projects. Know the rules. Ask the right questions. Get what you paid for.">
+    <meta property="og:title" content="Frank — Your Home. Your Standards.">
+    <meta property="og:description" content="Frank helps Australian homeowners know the rules, ask the right questions, and get what they paid for.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frank-helps.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow+Condensed:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== TOKENS ===== */
+        :root {
+            --cream:         #EDE3D0;
+            --cream-light:   #F5F0E8;
+            --cream-mid:     #DDD0B8;
+            --cream-dark:    #C8B99A;
+            --charcoal:      #3A3838;
+            --charcoal-mid:  #545252;
+            --charcoal-light:#706E6E;
+            --white:         #FAFAF8;
+            --border:        2px solid var(--charcoal);
+        }
+
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        /* ===== UTILITY ===== */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        .section-label {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            border: 2px solid transparent;
+            line-height: 1;
+        }
+        .btn-dark  { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
+        .btn-dark:hover { background: var(--charcoal-mid); border-color: var(--charcoal-mid); }
+        .btn-cream { background: var(--cream); color: var(--charcoal); border-color: var(--cream); }
+        .btn-cream:hover { background: var(--cream-mid); border-color: var(--cream-mid); }
+        .btn-outline-cream { background: transparent; color: var(--cream); border-color: rgba(237,227,208,0.5); }
+        .btn-outline-cream:hover { background: rgba(237,227,208,0.1); border-color: var(--cream); }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: var(--cream);
+            border-bottom: var(--border);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+        }
+
+        .nav-logo img { height: 38px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a:not(.btn) {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            transition: opacity 0.15s;
+        }
+        .nav-links a:not(.btn):hover { opacity: 0.5; }
+
+        /* Mobile nav toggle (checkbox hack) */
+        .nav-toggle { display: none; }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            transition: all 0.2s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: var(--charcoal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10rem 2rem 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* subtle grain texture */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Ccircle cx='1' cy='1' r='0.4' fill='%23ffffff' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-mark {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2.5rem;
+        }
+        .hero-mark img {
+            height: 150px;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            position: relative;
+            z-index: 1;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(4rem, 11vw, 10rem);
+            line-height: 0.88;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--cream-dark);
+        }
+
+        .hero-sub {
+            position: relative;
+            z-index: 1;
+            font-size: 1.15rem;
+            color: var(--cream-mid);
+            max-width: 460px;
+            margin-bottom: 3rem;
+            line-height: 1.75;
+        }
+
+        .hero-ctas {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--cream-dark);
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .hero-scroll-line {
+            width: 1px;
+            height: 44px;
+            background: linear-gradient(to bottom, var(--cream-dark), transparent);
+            animation: scroll-pulse 2s ease-in-out infinite;
+        }
+        @keyframes scroll-pulse {
+            0%, 100% { opacity: 0.35; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== PILLARS ===== */
+        .pillars {
+            background: var(--cream-light);
+            border-bottom: var(--border);
+            padding: 6rem 2rem;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .pillar {
+            padding: 2.5rem;
+            border-right: var(--border);
+        }
+        .pillar:last-child { border-right: none; }
+
+        .pillar-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 4.5rem;
+            line-height: 1;
+            color: var(--cream-dark);
+            margin-bottom: 1rem;
+        }
+        .pillar h3 {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 900;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+        .pillar p {
+            font-size: 0.92rem;
+            color: var(--charcoal-mid);
+            line-height: 1.75;
+        }
+
+        /* ===== PHOTO BREAK ===== */
+        .photo-break {
+            position: relative;
+            height: 480px;
+            overflow: hidden;
+            border-bottom: var(--border);
+        }
+        .photo-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            filter: sepia(60%) contrast(1.1) brightness(0.6);
+        }
+        .photo-break-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(58,56,56,0.55) 0%, rgba(58,56,56,0.2) 100%);
+        }
+        .photo-break-quote {
+            text-align: center;
+            color: var(--cream);
+            max-width: 680px;
+        }
+        .photo-break-quote blockquote {
+            font-family: 'Barlow', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 4vw, 2.8rem);
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+        }
+        .photo-break-quote cite {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream-mid);
+            font-style: normal;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 7rem 0;
+            background: var(--cream);
+            overflow: hidden;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .about .section-label { color: var(--charcoal-light); }
+        .about .section-label::before { background: var(--charcoal); }
+
+        .about h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .about-body p {
+            font-size: 1rem;
+            color: var(--charcoal-mid);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+        .about-body strong { color: var(--charcoal); font-weight: 600; }
+
+        .about-photo-wrap {
+            position: relative;
+        }
+        .about-photo-inner {
+            position: relative;
+        }
+        .about-photo-inner::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            right: -16px;
+            bottom: -16px;
+            border: 2px solid var(--charcoal);
+            z-index: 0;
+        }
+        .about-photo-inner img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            filter: sepia(35%) contrast(1.1);
+            border: 4px solid var(--charcoal);
+        }
+        .photo-caption {
+            margin-top: 1.25rem;
+            font-size: 0.78rem;
+            color: var(--charcoal-light);
+            font-style: italic;
+            letter-spacing: 0.04em;
+            padding-left: 4px;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 7rem 2rem;
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        .how .section-label { color: var(--cream-dark); }
+        .how .section-label::before { background: var(--cream-dark); }
+        .how h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 4rem;
+            color: var(--cream);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .step {
+            padding: 0 3rem 0 0;
+            border-right: 1px solid rgba(237,227,208,0.15);
+            padding-right: 3rem;
+            margin-right: 0;
+        }
+        .step:last-child { border-right: none; padding-right: 0; }
+        .step + .step { padding-left: 3rem; }
+
+        .step-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 5rem;
+            line-height: 1;
+            color: rgba(237,227,208,0.18);
+            margin-bottom: 1.5rem;
+        }
+        .step h3 {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+            color: var(--cream);
+        }
+        .step p {
+            font-size: 0.92rem;
+            color: var(--cream-mid);
+            line-height: 1.8;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            background: var(--cream-light);
+            padding: 7rem 2rem;
+        }
+        .pricing .section-label { color: var(--charcoal-light); }
+        .pricing .section-label::before { background: var(--charcoal); }
+        .pricing h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 1rem;
+        }
+        .pricing-intro {
+            max-width: 560px;
+            color: var(--charcoal-mid);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .pricing-promise {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 2.5rem;
+        }
+        .pricing-promise h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .pricing-promise p {
+            font-size: 0.9rem;
+            color: var(--cream-mid);
+            line-height: 1.7;
+            margin-bottom: 1.75rem;
+        }
+        .pricing-promise ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+        .pricing-promise li {
+            font-size: 0.88rem;
+            color: var(--cream);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pricing-promise li::before {
+            content: '✓';
+            font-weight: 700;
+            color: var(--cream-dark);
+            flex-shrink: 0;
+        }
+
+        .cost-table { border: var(--border); background: var(--white); }
+        .cost-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.25rem 1.75rem;
+            border-bottom: 1px solid var(--cream-mid);
+        }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-row:nth-child(even) { background: rgba(237,227,208,0.35); }
+
+        .cost-name {
+            font-weight: 600;
+            font-size: 0.93rem;
+            margin-bottom: 0.2rem;
+        }
+        .cost-desc {
+            font-size: 0.8rem;
+            color: var(--charcoal-light);
+        }
+        .cost-price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.9rem;
+            text-align: right;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+        .cost-price small {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.72rem;
+            color: var(--charcoal-light);
+        }
+
+        .pricing-example {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid var(--cream-mid);
+            font-size: 0.9rem;
+            color: var(--charcoal-mid);
+            line-height: 1.65;
+            background: var(--cream);
+        }
+        .pricing-example strong { color: var(--charcoal); }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 7rem 2rem;
+        }
+        .contact .section-label { color: var(--cream-dark); }
+        .contact .section-label::before { background: var(--cream-dark); }
+        .contact h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 1.25rem;
+            color: var(--cream);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+        .contact-blurb {
+            color: var(--cream-mid);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        .contact-jump { display: flex; flex-direction: column; gap: 0.875rem; }
+        .contact-jump-label {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .form-field { margin-bottom: 0 }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+        label {
+            display: block;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            margin-bottom: 0.5rem;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(237,227,208,0.07);
+            border: 1px solid rgba(237,227,208,0.2);
+            color: var(--cream);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            border-radius: 0;
+            transition: border-color 0.18s;
+            -webkit-appearance: none;
+        }
+        input:focus, textarea:focus { border-color: var(--cream-mid); }
+        input::placeholder, textarea::placeholder { color: rgba(237,227,208,0.3); }
+        textarea { resize: vertical; min-height: 120px; }
+
+        form { display: flex; flex-direction: column; gap: 1.25rem; }
+        form .btn { align-self: flex-start; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(237,227,208,0.12);
+            padding: 2.5rem 2.5rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-brand {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: var(--cream);
+            text-decoration: none;
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .footer-links a {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            transition: color 0.15s;
+        }
+        .footer-links a:hover { color: var(--cream); }
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--charcoal-light);
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            .pricing-layout { grid-template-columns: 1fr; }
+            .pricing-promise { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+            .pricing-promise h3 { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 820px) {
+            nav { padding: 0 1.5rem; }
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0; right: 0;
+                background: var(--cream);
+                border-bottom: var(--border);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                align-items: flex-start;
+            }
+            .nav-toggle:checked ~ .nav-links { display: flex; }
+
+            .pillars-grid { grid-template-columns: 1fr; }
+            .pillar { border-right: none; border-bottom: var(--border); }
+            .pillar:last-child { border-bottom: none; }
+
+            .photo-break { height: 320px; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-photo-wrap { order: -1; }
+
+            .steps { grid-template-columns: 1fr; gap: 2.5rem; }
+            .step { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(237,227,208,0.12); padding-bottom: 2.5rem; }
+            .step:last-child { border-bottom: none; padding-bottom: 0; }
+            .step + .step { padding-left: 0; }
+
+            .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+            .footer-copy { text-align: left; }
+
+            .pricing-promise { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 540px) {
+            .hero { padding: 8rem 1.5rem 6rem; }
+            .hero h1 { font-size: clamp(3.5rem, 15vw, 6rem); }
+            .form-row { grid-template-columns: 1fr; }
+            .cost-row { grid-template-columns: 1fr; }
+            .cost-price { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+    <a href="#" class="nav-logo">
+        <!--
+            Place your logo image at: assets/images/logo-full.png
+            This should be the horizontal circle + wordmark combo (cream background version)
+            For best results: ~200×50px PNG with cream background
+        -->
+        <img src="assets/images/logo-full.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;text-transform:uppercase;letter-spacing:-0.01em;color:var(--charcoal);">frank</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://app.frank-helps.com/login" class="btn btn-dark">Sign In</a></li>
+    </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-mark">
+        <!--
+            Place circle logo at: assets/images/logo-circle.png
+            This is the Frank illustration in a cream circle with dark border
+            On the dark hero background it reads as a stamp/seal — intentional
+        -->
+        <img src="assets/images/logo-circle.png" alt="Frank" onerror="this.style.display='none'">
+    </div>
+    <p class="hero-eyebrow">For Australian Homeowners</p>
+    <h1>Your Home.<br><em>Your Standards.</em></h1>
+    <p class="hero-sub">Frank's here to make sure you know the rules, ask the right questions, and actually get what you're paying for.</p>
+    <div class="hero-ctas">
+        <a href="https://app.frank-helps.com/register" class="btn btn-cream">Get Started — It's Free</a>
+        <a href="#about" class="btn btn-outline-cream">Learn More</a>
+    </div>
+    <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- ===== PILLARS ===== -->
+<section class="pillars">
+    <div class="container">
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="pillar-num">01</div>
+                <h3>Know the Rules</h3>
+                <p>Understand your rights, the relevant codes and standards, and what any tradie is legally required to deliver — before work starts.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">02</div>
+                <h3>Ask the Right Questions</h3>
+                <p>Frank helps you know exactly what to ask — before you sign anything, when something doesn't look right, and when you need to push back.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-num">03</div>
+                <h3>Get What You Paid For</h3>
+                <p>Don't settle for average. Frank puts you on equal footing so you can hold tradies to the standard your home deserves.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PHOTO BREAK ===== -->
+<div class="photo-break">
+    <!--
+        Place the family photo at: assets/images/frank-family.jpg
+        This is the vintage 1960s colour photo of Frank Hall and family
+    -->
+    <img src="assets/images/frank-family.jpg" alt="Frank Hall and family">
+    <div class="photo-break-overlay">
+        <div class="photo-break-quote">
+            <blockquote>"You're only as good as your word and your actions."</blockquote>
+            <cite>Frank Hall — Builder, 1950s–1980s</cite>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <div class="section-label">The Story</div>
+                <h2>Frank Does What He Said He Would.</h2>
+                <div class="about-body">
+                    <p>Your home is your biggest investment. It's not just bricks and mortar — <strong>it's personal.</strong> But here in Australia, tradies have no shortage of work. And when demand is high, standards can slide. Homeowners end up paying good money for average outcomes, with no idea what questions to ask or what their rights even are.</p>
+
+                    <p>Frank is named after my grandfather — <strong>Frank Hall</strong>, a builder who worked from the 1950s right through to the '80s. He was well respected. Not because he was flashy or clever, but because he was straight-talking and utterly reliable. He showed up. He did what he said he'd do. He believed, to his core, that you're only as good as your word and your actions.</p>
+
+                    <p>That's the Frank we built. Frank is online, on your side, and ready to help you navigate the whole process — so you know the rules, spot the red flags early, ask the right questions at the right time, and walk away with exactly what you paid for.</p>
+                </div>
+                <a href="https://app.frank-helps.com/register" class="btn btn-dark" style="margin-top:1.75rem">Get Started Free</a>
+            </div>
+            <div class="about-photo-wrap">
+                <div class="about-photo-inner">
+                    <img src="assets/images/frank-family.jpg" alt="Frank Hall and family, circa 1965">
+                </div>
+                <p class="photo-caption">Frank Hall &amp; family — respected builder, 1950s–1980s</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how" id="how">
+    <div class="container">
+        <div class="section-label">Simple by Design</div>
+        <h2>How Frank Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Upload Your Docs</h3>
+                <p>Contracts, quotes, inspection reports, site photos — just drop them in. Frank handles all the heavy reading so you don't have to decode pages of jargon on your own.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Frank Analyses</h3>
+                <p>Frank checks for missing clauses, unreasonable terms, red flags, and anything that doesn't add up — then spells it out in plain English every single time.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>You Know Where You Stand</h3>
+                <p>Get a clear picture of your rights, the risks, and exactly what questions to ask before you sign, pay, or let anyone pick up a tool.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-label">Pricing</div>
+        <h2>Pay Only for What You Use.</h2>
+        <p class="pricing-intro">No subscriptions. No lock-in. Frank runs on a simple credit system — buy credits when you need them, use them when you want. Credits never expire.</p>
+
+        <div class="pricing-layout">
+            <div class="pricing-promise">
+                <h3>Frank's Promise</h3>
+                <p>We charge for processing and storage only. No markups, no monthly fees, no surprises. Use Frank once or every week — it's entirely up to you.</p>
+                <ul>
+                    <li>No subscription required</li>
+                    <li>Credits never expire</li>
+                    <li>Pay as you go</li>
+                    <li>Top up any time</li>
+                    <li>Your data stays yours</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="cost-table">
+                    <div class="cost-row">
+                        <div>
+                            <div class="cost-name">Document Analysis</div>
+                            <div class="cost-desc">Upload and analyse a contract, quote, or building document</div>
+                        </div>
+                        <div class="cost-price">9¢ <small>per document</small></div>
+                    </div>
+                    <div class="cost-row">
+                        <div>
+                            <div class="cost-name">Photo &amp; Site Inspection</div>
+                            <div class="cost-desc">Analyse site photos for defects, issues, or red flags</div>
+                        </div>
+                        <div class="cost-price">15¢ <small>per image</small></div>
+                    </div>
+                    <div class="cost-row">
+                        <div>
+                            <div class="cost-name">Contract Review Report</div>
+                            <div class="cost-desc">Full review with plain-English summary and recommended questions to ask</div>
+                        </div>
+                        <div class="cost-price">25¢ <small>per report</small></div>
+                    </div>
+                    <div class="cost-row">
+                        <div>
+                            <div class="cost-name">Ask Frank</div>
+                            <div class="cost-desc">Ask Frank anything about your project, documents, or rights</div>
+                        </div>
+                        <div class="cost-price">5¢ <small>per query</small></div>
+                    </div>
+                    <div class="cost-row">
+                        <div>
+                            <div class="cost-name">Secure Document Storage</div>
+                            <div class="cost-desc">Keep your documents accessible whenever you need them</div>
+                        </div>
+                        <div class="cost-price">1¢ <small>/ doc / month</small></div>
+                    </div>
+                </div>
+                <div class="pricing-example">
+                    <strong>Example:</strong> Upload your building contract, analyse three site photos, run a full review report, and ask Frank two follow-up questions — all for under <strong>75 cents</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                <div class="section-label">Get in Touch</div>
+                <h2>Got a Question?</h2>
+                <p class="contact-blurb">Frank's built by people who've been through the same frustrations. If you've got a question about how Frank works, what we cover, or anything in between — just ask.</p>
+
+                <div class="contact-jump">
+                    <span class="contact-jump-label">Or jump straight in —</span>
+                    <a href="https://app.frank-helps.com/register" class="btn btn-cream">Create Account — It's Free</a>
+                    <a href="https://app.frank-helps.com/login" class="btn btn-outline-cream">Sign In</a>
+                </div>
+            </div>
+
+            <!-- Configure this form: replace YOUR_FORM_ID with your Formspree endpoint -->
+            <!-- Alternatively, replace the action URL with your own backend endpoint -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-row">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's it about?">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell Frank what's on your mind." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-cream">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <a href="#" class="footer-brand">frank</a>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#how">How it Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+            <a href="https://app.frank-helps.com/login">Sign In</a>
+            <a href="https://app.frank-helps.com/register">Get Started</a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Frank.<br>
+            Built for Australian homeowners.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
