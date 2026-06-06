@@ -467,114 +467,113 @@
             margin-bottom: 1rem;
         }
         .pricing-intro {
-            max-width: 560px;
+            max-width: 620px;
             color: var(--charcoal-mid);
             font-size: 1rem;
             line-height: 1.75;
             margin-bottom: 4rem;
         }
 
-        .pricing-layout {
+        .pricing-plans {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             align-items: start;
+            margin-bottom: 2rem;
         }
 
-        .pricing-promise {
+        .plan {
+            border: var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .plan-featured {
             background: var(--charcoal);
             color: var(--cream);
-            padding: 2.5rem;
-            border-radius: 12px;
-        }
-        .pricing-promise h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.75rem;
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-        .pricing-promise p {
-            font-size: 0.9rem;
-            color: var(--cream-mid);
-            line-height: 1.7;
-            margin-bottom: 1.75rem;
-        }
-        .pricing-promise ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
-        .pricing-promise li {
-            font-size: 0.88rem;
-            color: var(--cream);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .pricing-promise li::before {
-            content: '✓';
-            font-weight: 700;
-            color: var(--cream-dark);
-            flex-shrink: 0;
+            border-color: var(--charcoal);
         }
 
-        .cost-table { border: var(--border); background: var(--white); border-radius: 12px; overflow: hidden; }
-        .cost-row {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 2rem;
-            padding: 1.25rem 1.75rem;
+        .plan-header {
+            padding: 2rem 2rem 1.5rem;
             border-bottom: 1px solid var(--cream-mid);
         }
-        .cost-row:last-child { border-bottom: none; }
-        .cost-row:nth-child(even) { background: rgba(237,227,208,0.35); }
+        .plan-featured .plan-header { border-bottom-color: rgba(237,227,208,0.15); }
 
-        .cost-name {
-            font-weight: 600;
-            font-size: 0.93rem;
-            margin-bottom: 0.2rem;
-        }
-        .cost-desc {
-            font-size: 0.8rem;
+        .plan-name {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
             color: var(--charcoal-light);
+            margin-bottom: 0.75rem;
         }
-        .cost-price {
+        .plan-featured .plan-name { color: var(--cream-dark); }
+
+        .plan-price {
             font-family: 'Barlow Condensed', sans-serif;
             font-weight: 900;
-            font-size: 1.9rem;
-            text-align: right;
-            white-space: nowrap;
-            line-height: 1.1;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
         }
-        .cost-price small {
-            display: block;
+        .plan-featured .plan-price { color: var(--cream); }
+        .plan-price span {
             font-family: 'DM Sans', sans-serif;
             font-weight: 400;
-            font-size: 0.72rem;
+            font-size: 1rem;
             color: var(--charcoal-light);
         }
+        .plan-featured .plan-price span { color: var(--cream-dark); }
 
-        .pricing-estimate-notice {
-            margin-top: 1rem;
-            padding: 0.875rem 1.25rem;
-            background: transparent;
-            border: 1px solid var(--cream-mid);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: var(--charcoal-light);
-            line-height: 1.6;
+        .plan-tagline {
+            font-size: 0.88rem;
+            color: var(--charcoal-mid);
+            line-height: 1.5;
+        }
+        .plan-featured .plan-tagline { color: var(--cream-mid); }
+
+        .plan-body {
+            padding: 1.75rem 2rem 2rem;
         }
 
-        .pricing-example {
-            margin-top: 1.5rem;
-            padding: 1.25rem 1.75rem;
-            border: 1px solid var(--cream-mid);
+        .plan-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .plan-features li {
             font-size: 0.9rem;
             color: var(--charcoal-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.5;
+        }
+        .plan-featured .plan-features li { color: var(--cream-mid); }
+        .plan-features li::before {
+            content: '✓';
+            font-weight: 700;
+            color: var(--charcoal);
+            flex-shrink: 0;
+            margin-top: 0.05em;
+        }
+        .plan-featured .plan-features li::before { color: var(--cream-dark); }
+
+        .pricing-notice {
+            padding: 1.25rem 1.5rem;
+            border: 1px solid var(--cream-mid);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: var(--charcoal-light);
             line-height: 1.65;
             background: var(--cream);
-            border-radius: 8px;
         }
-        .pricing-example strong { color: var(--charcoal); }
+        .pricing-notice strong { color: var(--charcoal); }
 
         /* ===== CONTACT ===== */
         .contact {
@@ -696,10 +695,8 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1000px) {
-            .pricing-layout { grid-template-columns: 1fr; }
-            .pricing-promise { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-            .pricing-promise h3 { grid-column: 1 / -1; }
+        @media (max-width: 700px) {
+            .pricing-plans { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 820px) {
@@ -888,67 +885,51 @@
 <section class="pricing" id="pricing">
     <div class="container">
         <div class="section-label">Pricing</div>
-        <h2>Pay Only for What You Use.</h2>
-        <p class="pricing-intro">No subscriptions. No lock-in. Frank runs on a simple credit system. Buy credits when you need them, use them when you want. Credits never expire.</p>
+        <h2>Cheaper Than Getting It Wrong.</h2>
+        <p class="pricing-intro">You're spending tens — sometimes hundreds — of thousands on your home. Frank's monthly subscription costs less than a coffee a week and could save you far more than that. Start on Standard and upgrade only if you need it.</p>
 
-        <div class="pricing-layout">
-            <div class="pricing-promise">
-                <h3>Frank's Promise</h3>
-                <p>We charge for processing and storage only. No monthly fees, no surprises. Use Frank once or every week. It's entirely up to you.</p>
-                <ul>
-                    <li>No subscription required</li>
-                    <li>Credits never expire</li>
-                    <li>Pay as you go</li>
-                    <li>Top up any time</li>
-                    <li>Your data stays yours</li>
-                </ul>
+        <div class="pricing-plans">
+            <div class="plan">
+                <div class="plan-header">
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price">$9<span>/mo</span></div>
+                    <p class="plan-tagline">Everything most homeowners need to manage a project and stay on top of their trades.</p>
+                </div>
+                <div class="plan-body">
+                    <ul class="plan-features">
+                        <li>Unlimited project management</li>
+                        <li>Document analysis and contract reviews</li>
+                        <li>Photo and site inspection analysis</li>
+                        <li>Ask Frank questions about your project</li>
+                        <li>Send notices to trades</li>
+                        <li>Secure document storage</li>
+                        <li>Standard AI usage included</li>
+                    </ul>
+                    <a href="https://app.frank-helps.com/register" class="btn btn-dark">Get Started</a>
+                </div>
             </div>
 
-            <div>
-                <div class="cost-table">
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-name">Document Analysis</div>
-                            <div class="cost-desc">Upload and analyse a contract, quote, or building document</div>
-                        </div>
-                        <div class="cost-price">~9¢ <small>per document</small></div>
-                    </div>
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-name">Photo &amp; Site Inspection</div>
-                            <div class="cost-desc">Analyse site photos for defects, issues, or red flags</div>
-                        </div>
-                        <div class="cost-price">~15¢ <small>per image</small></div>
-                    </div>
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-name">Contract Review Report</div>
-                            <div class="cost-desc">Full review with plain-English summary and recommended questions to ask</div>
-                        </div>
-                        <div class="cost-price">~25¢ <small>per report</small></div>
-                    </div>
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-name">Ask Frank</div>
-                            <div class="cost-desc">Ask Frank anything about your project, documents, or rights</div>
-                        </div>
-                        <div class="cost-price">~5¢ <small>per query</small></div>
-                    </div>
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-name">Secure Document Storage</div>
-                            <div class="cost-desc">Keep your documents accessible whenever you need them</div>
-                        </div>
-                        <div class="cost-price">~1¢ <small>/ doc / month</small></div>
-                    </div>
+            <div class="plan plan-featured">
+                <div class="plan-header">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">$29<span>/mo</span></div>
+                    <p class="plan-tagline">For complex builds, multiple projects, or anyone who wants Frank working overtime.</p>
                 </div>
-                <div class="pricing-estimate-notice">
-                    Prices are estimates. Actual cost varies based on document length and complexity — longer documents and detailed queries use more tokens and may cost slightly more.
-                </div>
-                <div class="pricing-example">
-                    <strong>Example:</strong> Upload your building contract, analyse three site photos, run a full review report, and ask Frank two follow-up questions, all for around <strong>75 cents</strong>.
+                <div class="plan-body">
+                    <ul class="plan-features">
+                        <li>Everything in Standard</li>
+                        <li>Higher AI usage limits for large or frequent documents</li>
+                        <li>Multiple active projects</li>
+                        <li>Priority processing</li>
+                        <li>Ideal for renovations, extensions, or new builds</li>
+                    </ul>
+                    <a href="https://app.frank-helps.com/register" class="btn btn-cream">Get Started</a>
                 </div>
             </div>
+        </div>
+
+        <div class="pricing-notice">
+            <strong>About AI usage:</strong> Both plans include a monthly token allowance for AI processing. The Standard plan covers typical usage for most projects. Premium is only needed if you're uploading large volumes of documents or running frequent, detailed queries. Not sure? Start with Standard — you can upgrade any time.
         </div>
     </div>
 </section>
