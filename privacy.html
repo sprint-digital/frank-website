@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Frank</title>
+    <meta name="description" content="Privacy Policy for Frank, the AI-powered home building assistant for Australian homeowners, provided by Sprint Digital Pty Ltd. Hosted and stored in Australia.">
+    <meta property="og:title" content="Privacy Policy — Frank">
+    <meta property="og:description" content="How Sprint Digital Pty Ltd collects, uses, and protects your information when you use Frank.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frank-helps.com/privacy.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow+Condensed:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== TOKENS ===== */
+        :root {
+            --cream:         #EDE3D0;
+            --cream-light:   #F5F0E8;
+            --cream-mid:     #DDD0B8;
+            --cream-dark:    #C8B99A;
+            --charcoal:      #3A3838;
+            --charcoal-mid:  #545252;
+            --charcoal-light:#706E6E;
+            --white:         #FAFAF8;
+            --border:        2px solid var(--charcoal);
+        }
+
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        .section-label {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            color: var(--charcoal-light);
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            flex-shrink: 0;
+            background: var(--charcoal);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            border: 2px solid transparent;
+            line-height: 1;
+            border-radius: 8px;
+        }
+        .btn-dark  { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
+        .btn-dark:hover { background: var(--charcoal-mid); border-color: var(--charcoal-mid); }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: var(--cream);
+            border-bottom: var(--border);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+        }
+        .nav-logo img { height: 30px; width: auto; }
+        .nav-toggle { display: none; }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            transition: all 0.2s;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a:not(.btn) {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            transition: opacity 0.15s;
+        }
+        .nav-links a:not(.btn):hover { opacity: 0.6; }
+
+        /* ===== LEGAL HEADER ===== */
+        .legal-hero {
+            padding: 11.5rem 2rem 4rem;
+            border-bottom: var(--border);
+        }
+        .legal-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            text-transform: uppercase;
+            line-height: 0.98;
+            margin-bottom: 1rem;
+        }
+        .legal-updated {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== LEGAL CONTENT ===== */
+        .legal-content { padding: 4.5rem 2rem 6rem; }
+        .legal-container { max-width: 760px; }
+        .legal-container > p {
+            font-size: 1rem;
+            color: var(--charcoal-mid);
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+        .legal-container h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            margin: 3rem 0 1.1rem;
+            color: var(--charcoal);
+        }
+        .legal-container h2:first-of-type { margin-top: 0; }
+        .legal-container ul { margin: 0 0 1.5rem 1.4rem; }
+        .legal-container li {
+            font-size: 1rem;
+            color: var(--charcoal-mid);
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+        }
+        .legal-container strong { color: var(--charcoal); font-weight: 600; }
+        .legal-container a { color: var(--charcoal); text-decoration: underline; text-underline-offset: 2px; }
+        .legal-container a:hover { color: var(--charcoal-mid); }
+
+        .legal-note {
+            margin-top: 3.5rem;
+            padding: 1.5rem 1.75rem;
+            background: var(--cream-light);
+            border: 2px solid var(--cream-dark);
+            border-radius: 12px;
+            font-size: 0.88rem;
+            color: var(--charcoal-mid);
+            line-height: 1.7;
+        }
+        .legal-note strong { color: var(--charcoal); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(237,227,208,0.12);
+            padding: 2.5rem 2.5rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-brand { text-decoration: none; }
+        .footer-brand img { height: 36px; width: auto; }
+        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; align-items: center; }
+        .footer-links a {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            transition: color 0.15s;
+        }
+        .footer-links a:hover { color: var(--cream); }
+        .footer-copy { font-size: 0.78rem; color: var(--charcoal-light); text-align: right; line-height: 1.6; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 820px) {
+            nav { padding: 0 1.5rem; }
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0; right: 0;
+                background: var(--cream);
+                border-bottom: var(--border);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                align-items: flex-start;
+            }
+            .nav-toggle:checked ~ .nav-links { display: flex; }
+
+            .legal-hero { padding-top: 9rem; }
+
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+            .footer-copy { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="assets/images/frank-text-dark.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;text-transform:uppercase;letter-spacing:-0.01em;color:var(--charcoal);">frank</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#how">How it Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="https://app.frank-helps.com/login" class="btn btn-dark">Sign In</a></li>
+    </ul>
+</nav>
+
+<!-- ===== LEGAL HEADER ===== -->
+<header class="legal-hero">
+    <div class="container">
+        <div class="section-label">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p class="legal-updated">Last updated: 8 June 2026</p>
+    </div>
+</header>
+
+<!-- ===== LEGAL CONTENT ===== -->
+<section class="legal-content">
+    <div class="container legal-container">
+        <p><strong>Sprint Digital Pty Ltd</strong> (ABN [insert ABN], "Sprint Digital", "we", "us", "our") is based in Queensland, Australia, and respects your privacy. This Privacy Policy explains what personal information we collect through Frank (frank-helps.com and app.frank-helps.com), how we use, store, and protect it, and how you can access or correct it. We handle your information in accordance with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).</p>
+        <p>By using Frank, you agree to the collection and use of your information as described in this policy. If you don't agree, please don't use the Service.</p>
+
+        <h2>1. The Information We Collect</h2>
+        <p>Depending on how you use Frank, we may collect:</p>
+        <ul>
+            <li><strong>Contact and account details</strong>, such as your name, email address, phone number, and password;</li>
+            <li><strong>Project information</strong>, such as documents, contracts, quotes, photos, site inspection reports, and notes you upload or create within Frank;</li>
+            <li><strong>Communications</strong>, such as messages you send through Frank, contact form submissions, and support enquiries;</li>
+            <li><strong>Billing information</strong>, such as your subscription plan and payment details (your payment details are processed securely by our payment provider; we don't store full card numbers ourselves);</li>
+            <li><strong>Usage information</strong>, such as how you interact with the Service, device and browser details, and log data.</li>
+        </ul>
+
+        <h2>2. How We Collect Your Information</h2>
+        <p>We collect information directly from you when you create an account, use Frank, upload documents or photos, contact us, or fill out a form on our website. We may also collect some information automatically through cookies and similar technologies (see Section 7).</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul>
+            <li>Provide and operate Frank, including running your documents, photos, and questions through Frank's AI systems to give you analysis, summaries, and answers;</li>
+            <li>Manage your account and subscription, including billing and customer support;</li>
+            <li>Communicate with you about the Service, respond to your enquiries, and, where you've agreed, send you updates about Frank;</li>
+            <li>Maintain the security, integrity, and performance of the Service;</li>
+            <li>Meet our legal and regulatory obligations.</li>
+        </ul>
+
+        <h2>4. AI Processing of Your Information</h2>
+        <p>When you upload documents or photos, or ask Frank a question, that material is processed by AI systems to generate the analysis, summaries, and answers you see in the Service. We don't use your project content to train models for other customers. Our infrastructure, and the data associated with your account, is hosted and stored in Australia, and we take reasonable steps to make sure any provider involved in processing your information handles it securely and only for the purpose of providing the Service to you.</p>
+
+        <h2>5. Where Your Information is Stored</h2>
+        <p>Your information, including the documents, photos, and other content you upload, is hosted on servers located in Australia. We don't store or process your personal information overseas.</p>
+
+        <h2>6. Disclosure of Your Information</h2>
+        <p>We don't sell your personal information. We may share it with:</p>
+        <ul>
+            <li><strong>Service providers</strong> who help us run Frank, such as hosting, infrastructure, payment processing, and customer support tools, who are only permitted to use your information to provide those services to us;</li>
+            <li><strong>Professional advisers</strong>, such as our accountants, auditors, or lawyers, where reasonably required;</li>
+            <li><strong>Authorities or regulators</strong>, where we're required or authorised to do so by law.</li>
+        </ul>
+        <p>Where you choose to contact a trade or other third party through Frank, the information you decide to send them is shared directly between you and them. We aren't responsible for how they handle it.</p>
+
+        <h2>7. Cookies and Analytics</h2>
+        <p>Our website may use cookies and similar technologies to help it function and to understand how visitors use the site, for example through basic analytics. You can adjust your browser settings to refuse cookies, although some parts of the Service may not work as well as a result.</p>
+
+        <h2>8. Data Security</h2>
+        <p>We take reasonable technical and organisational steps to protect your information from misuse, interference, loss, and unauthorised access, modification, or disclosure. This includes restricting access to personal information to people who need it to provide the Service, and using secure, Australian-based hosting infrastructure. No method of transmission or storage is completely secure, and we can't guarantee absolute security.</p>
+
+        <h2>9. How Long We Keep Your Information</h2>
+        <p>We keep your information for as long as your account is active, or for as long as we need it to provide the Service, meet our legal obligations, resolve disputes, and enforce our agreements. If you close your account, we'll delete or de-identify your personal information within a reasonable period, unless we're required to retain it for longer, for example for tax or record-keeping purposes.</p>
+
+        <h2>10. Accessing and Correcting Your Information</h2>
+        <p>You can access and update most of your account information directly within Frank. You can also ask us to access, correct, or delete the personal information we hold about you by contacting us using the details in Section 14. We'll respond to your request within a reasonable time, in line with the Australian Privacy Principles.</p>
+
+        <h2>11. Children's Privacy</h2>
+        <p>Frank is intended for adults aged 18 and over, and isn't directed at children. We don't knowingly collect personal information from children.</p>
+
+        <h2>12. Overseas Disclosure</h2>
+        <p>We do not disclose, store, or process your personal information outside Australia.</p>
+
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. We'll post the updated policy on this page with a new "last updated" date, and where a change is material, we'll take reasonable steps to let you know.</p>
+
+        <h2>14. Complaints and Contact</h2>
+        <p>If you have any questions about this Privacy Policy, or you'd like to make a complaint about how we've handled your personal information, please contact us:</p>
+        <p>
+            Sprint Digital Pty Ltd<br>
+            [Business address], Queensland, Australia<br>
+            Email: <a href="mailto:hello@frank-helps.com">hello@frank-helps.com</a>
+        </p>
+        <p>We'll do our best to resolve your complaint promptly and fairly. If you're not satisfied with our response, you can contact the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>.</p>
+
+        <div class="legal-note">
+            <strong>Note:</strong> This page is a general template and hasn't been reviewed by a lawyer. Please replace the placeholders above (ABN, business address, contact email) with your actual details, confirm the description of your hosting and AI providers matches your real setup, and consider having this policy reviewed by an Australian solicitor before relying on it, especially as Frank's features evolve.
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+            <img src="assets/images/frank-text-light.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+            <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--cream);">frank</span>
+        </a>
+        <div class="footer-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#how">How it Works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="https://app.frank-helps.com/login">Sign In</a>
+            <a href="https://app.frank-helps.com/register">Get Started</a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Sprint Digital Pty Ltd.<br>
+            Built for Australian homeowners.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

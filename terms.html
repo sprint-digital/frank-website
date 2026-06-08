@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Frank</title>
+    <meta name="description" content="Terms of Service for Frank, the AI-powered home building assistant for Australian homeowners, provided by Sprint Digital Pty Ltd.">
+    <meta property="og:title" content="Terms of Service — Frank">
+    <meta property="og:description" content="The terms that govern your use of Frank, provided by Sprint Digital Pty Ltd.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frank-helps.com/terms.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow+Condensed:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== TOKENS ===== */
+        :root {
+            --cream:         #EDE3D0;
+            --cream-light:   #F5F0E8;
+            --cream-mid:     #DDD0B8;
+            --cream-dark:    #C8B99A;
+            --charcoal:      #3A3838;
+            --charcoal-mid:  #545252;
+            --charcoal-light:#706E6E;
+            --white:         #FAFAF8;
+            --border:        2px solid var(--charcoal);
+        }
+
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        .section-label {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            color: var(--charcoal-light);
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            flex-shrink: 0;
+            background: var(--charcoal);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            border: 2px solid transparent;
+            line-height: 1;
+            border-radius: 8px;
+        }
+        .btn-dark  { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
+        .btn-dark:hover { background: var(--charcoal-mid); border-color: var(--charcoal-mid); }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: var(--cream);
+            border-bottom: var(--border);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+        }
+        .nav-logo img { height: 30px; width: auto; }
+        .nav-toggle { display: none; }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            transition: all 0.2s;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a:not(.btn) {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            transition: opacity 0.15s;
+        }
+        .nav-links a:not(.btn):hover { opacity: 0.6; }
+
+        /* ===== LEGAL HEADER ===== */
+        .legal-hero {
+            padding: 11.5rem 2rem 4rem;
+            border-bottom: var(--border);
+        }
+        .legal-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            text-transform: uppercase;
+            line-height: 0.98;
+            margin-bottom: 1rem;
+        }
+        .legal-updated {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== LEGAL CONTENT ===== */
+        .legal-content { padding: 4.5rem 2rem 6rem; }
+        .legal-container { max-width: 760px; }
+        .legal-container > p {
+            font-size: 1rem;
+            color: var(--charcoal-mid);
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+        .legal-container h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            margin: 3rem 0 1.1rem;
+            color: var(--charcoal);
+        }
+        .legal-container h2:first-of-type { margin-top: 0; }
+        .legal-container ul { margin: 0 0 1.5rem 1.4rem; }
+        .legal-container li {
+            font-size: 1rem;
+            color: var(--charcoal-mid);
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+        }
+        .legal-container strong { color: var(--charcoal); font-weight: 600; }
+        .legal-container a { color: var(--charcoal); text-decoration: underline; text-underline-offset: 2px; }
+        .legal-container a:hover { color: var(--charcoal-mid); }
+
+        .legal-note {
+            margin-top: 3.5rem;
+            padding: 1.5rem 1.75rem;
+            background: var(--cream-light);
+            border: 2px solid var(--cream-dark);
+            border-radius: 12px;
+            font-size: 0.88rem;
+            color: var(--charcoal-mid);
+            line-height: 1.7;
+        }
+        .legal-note strong { color: var(--charcoal); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(237,227,208,0.12);
+            padding: 2.5rem 2.5rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-brand { text-decoration: none; }
+        .footer-brand img { height: 36px; width: auto; }
+        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; align-items: center; }
+        .footer-links a {
+            text-decoration: none;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cream-dark);
+            transition: color 0.15s;
+        }
+        .footer-links a:hover { color: var(--cream); }
+        .footer-copy { font-size: 0.78rem; color: var(--charcoal-light); text-align: right; line-height: 1.6; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 820px) {
+            nav { padding: 0 1.5rem; }
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0; right: 0;
+                background: var(--cream);
+                border-bottom: var(--border);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                align-items: flex-start;
+            }
+            .nav-toggle:checked ~ .nav-links { display: flex; }
+
+            .legal-hero { padding-top: 9rem; }
+
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+            .footer-copy { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <img src="assets/images/frank-text-dark.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.75rem;text-transform:uppercase;letter-spacing:-0.01em;color:var(--charcoal);">frank</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#how">How it Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="https://app.frank-helps.com/login" class="btn btn-dark">Sign In</a></li>
+    </ul>
+</nav>
+
+<!-- ===== LEGAL HEADER ===== -->
+<header class="legal-hero">
+    <div class="container">
+        <div class="section-label">Legal</div>
+        <h1>Terms of Service</h1>
+        <p class="legal-updated">Last updated: 8 June 2026</p>
+    </div>
+</header>
+
+<!-- ===== LEGAL CONTENT ===== -->
+<section class="legal-content">
+    <div class="container legal-container">
+        <p>Welcome to Frank. These Terms of Service ("Terms") govern your access to and use of the Frank website at frank-helps.com and the Frank application at app.frank-helps.com, including any related features and content (together, the "Service"), provided by <strong>Sprint Digital Pty Ltd</strong> (ABN [insert ABN], "Sprint Digital", "we", "us", "our"), a company based in Queensland, Australia.</p>
+        <p>By creating an account, or accessing or using the Service in any way, you agree to be bound by these Terms. If you do not agree to these Terms, please don't use the Service.</p>
+
+        <h2>1. About Frank</h2>
+        <p>Frank is an AI-powered tool that helps Australian homeowners manage home building and renovation projects. Frank can review documents and contracts, analyse photos and site inspection material, answer questions about your project, help you communicate with trades, store project documents, and track budgets.</p>
+
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 18 years old and able to form a legally binding contract under Australian law to use the Service. By using Frank, you confirm that you meet these requirements.</p>
+
+        <h2>3. Your Account</h2>
+        <p>You're responsible for keeping your account login details confidential and for all activity that happens under your account. Please let us know straight away if you become aware of any unauthorised use of your account.</p>
+        <p>You agree to provide accurate, current, and complete information when you create your account, and to keep that information up to date.</p>
+
+        <h2>4. Subscriptions and Payment</h2>
+        <p>Frank is offered on a free Standard plan and a paid Premium plan (currently $49 per month, in Australian dollars). Plan inclusions, pricing, and any usage caps or limits are described on our Pricing page and may change from time to time. Where charges apply, you authorise us, or our payment processor, to charge your nominated payment method on a recurring basis until you cancel.</p>
+        <p>You can cancel your subscription at any time in your account settings or by contacting us. Cancellation takes effect at the end of your current billing period. Except where required by the Australian Consumer Law, we don't provide refunds for partial billing periods.</p>
+
+        <h2>5. Acceptable Use</h2>
+        <p>When using Frank, you agree not to:</p>
+        <ul>
+            <li>Upload content that is unlawful, fraudulent, defamatory, or that infringes someone else's rights;</li>
+            <li>Try to interfere with, disrupt, or gain unauthorised access to the Service or the systems behind it;</li>
+            <li>Use the Service to build a competing product, or to scrape, reverse engineer, or resell the Service without our written permission;</li>
+            <li>Upload anything that contains malicious code, viruses, or other material designed to damage or interfere with the Service or its users.</li>
+        </ul>
+        <p>We may suspend or terminate your access if we reasonably believe you've breached these Terms.</p>
+
+        <h2>6. AI-Generated Output</h2>
+        <p>Frank uses artificial intelligence to analyse documents, photos, contracts, and other material you provide, and to answer your questions. While we work hard to make Frank accurate and genuinely useful, AI-generated output:</p>
+        <ul>
+            <li>May contain mistakes, omissions, or out-of-date information;</li>
+            <li>Is general in nature, and is not a substitute for advice from a qualified professional such as a solicitor, building certifier, engineer, or licensed building practitioner;</li>
+            <li>Should always be checked by you before you rely on it to make decisions about your project, your contracts, or your money.</li>
+        </ul>
+        <p>Frank does not provide legal, financial, or building advice, and using the Service does not create any kind of professional relationship between you and Sprint Digital. You remain responsible for the decisions you make about your home and your project.</p>
+
+        <h2>7. Your Content</h2>
+        <p>You keep ownership of the documents, photos, and other material you upload to Frank ("Your Content"). By uploading Your Content, you give us a limited licence to store, process, and use it solely to provide and improve the Service for you, including running it through Frank's AI systems.</p>
+        <p>You confirm that you have the right to upload Your Content, and that doing so doesn't break any law or breach anyone else's rights, for example the privacy of other people who might appear in your photos or documents.</p>
+
+        <h2>8. Intellectual Property</h2>
+        <p>Other than Your Content, all intellectual property in the Service, including the Frank name, branding, software, and website content, belongs to Sprint Digital Pty Ltd or our licensors. You may not copy, modify, distribute, or create derivative works from the Service except as these Terms or the law allow.</p>
+
+        <h2>9. Third Parties</h2>
+        <p>Frank may help you communicate with trades, or reference codes, standards, and information published by third parties. We aren't responsible for the conduct, advice, work, or services provided by any tradesperson, builder, supplier, or other third party, whether or not you found or contacted them through Frank.</p>
+
+        <h2>10. Availability and Changes to the Service</h2>
+        <p>We aim to keep Frank available and reliable, but we can't guarantee the Service will be uninterrupted, error-free, or available at all times. We may update, change, suspend, or discontinue any part of the Service, including features or pricing, from time to time, and we'll do our best to give you reasonable notice of any material changes.</p>
+
+        <h2>11. Disclaimers</h2>
+        <p>To the maximum extent the law allows, the Service is provided "as is" and "as available", without warranties of any kind, whether express or implied. Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy you have under the Australian Consumer Law or any other law that can't lawfully be excluded.</p>
+
+        <h2>12. Limitation of Liability</h2>
+        <p>To the extent the law allows, Sprint Digital's total liability arising out of or in connection with the Service is limited, at our option, to resupplying the Service or paying the cost of having the Service resupplied. We aren't liable for any indirect, special, or consequential loss, including loss of profits, data, or opportunity, arising from your use of the Service.</p>
+
+        <h2>13. Indemnity</h2>
+        <p>You agree to indemnify Sprint Digital against any loss, damage, cost, or expense we incur as a result of your breach of these Terms or your misuse of the Service, except to the extent it's caused by our own negligence or wrongful act.</p>
+
+        <h2>14. Termination</h2>
+        <p>You can stop using the Service and close your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if we reasonably believe your continued use poses a risk to the Service, other users, or Sprint Digital.</p>
+
+        <h2>15. Governing Law</h2>
+        <p>These Terms are governed by the laws of Queensland, Australia. You and Sprint Digital both submit to the non-exclusive jurisdiction of the courts of Queensland, Australia.</p>
+
+        <h2>16. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. If we make material changes, we'll let you know, for example by email or a notice within the Service. Continuing to use Frank after changes take effect means you accept the updated Terms.</p>
+
+        <h2>17. Contact Us</h2>
+        <p>If you have any questions about these Terms, you can reach us at:</p>
+        <p>
+            Sprint Digital Pty Ltd<br>
+            [Business address], Queensland, Australia<br>
+            Email: <a href="mailto:hello@frank-helps.com">hello@frank-helps.com</a>
+        </p>
+
+        <div class="legal-note">
+            <strong>Note:</strong> This page is a general template and hasn't been reviewed by a lawyer. Please replace the placeholders above (ABN, business address, contact email) with your actual details, and consider having these Terms reviewed by an Australian solicitor before relying on them, especially as Frank's features and subscription plans evolve.
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="footer-brand">
+            <img src="assets/images/frank-text-light.png" alt="Frank" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+            <span style="display:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--cream);">frank</span>
+        </a>
+        <div class="footer-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#how">How it Works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="https://app.frank-helps.com/login">Sign In</a>
+            <a href="https://app.frank-helps.com/register">Get Started</a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Sprint Digital Pty Ltd.<br>
+            Built for Australian homeowners.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
