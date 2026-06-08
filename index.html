@@ -184,6 +184,30 @@
             height: auto;
         }
 
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.55rem 1.15rem;
+            border: 2px solid rgba(237,227,208,0.3);
+            border-radius: 999px;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cream-mid);
+            margin-bottom: 2rem;
+        }
+        .hero-badge-dot {
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            flex-shrink: 0;
+        }
+
         .hero-eyebrow {
             font-family: 'Barlow', sans-serif;
             font-weight: 600;
@@ -793,6 +817,10 @@
                 margin-top: 2.5rem;
             }
             .hero-mark img { width: 160px; }
+            .hero-badge {
+                white-space: normal;
+                text-align: left;
+            }
         }
 
         @media (max-width: 540px) {
@@ -828,6 +856,10 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Beta now open to Queensland projects, more states coming soon
+        </div>
         <p class="hero-eyebrow">For Australian Homeowners</p>
         <h1>Your Home.<br><em>Your Standards.</em></h1>
         <p class="hero-sub">Frank's here to make sure you know the rules, ask the right questions, and actually get what you're paying for.</p>
