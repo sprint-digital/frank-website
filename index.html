@@ -208,6 +208,24 @@
             flex-shrink: 0;
         }
 
+        .beta-banner {
+            background: var(--cream);
+            border-bottom: var(--border);
+            padding: 1.4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .beta-banner .hero-badge {
+            margin-bottom: 0;
+            border-color: rgba(58,56,56,0.25);
+            color: var(--charcoal-mid);
+        }
+        .beta-banner .hero-badge-dot {
+            background: var(--charcoal-light);
+        }
+
         .hero-eyebrow {
             font-family: 'Barlow', sans-serif;
             font-weight: 600;
@@ -862,10 +880,6 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
     <div class="hero-text">
-        <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Beta now open to Queensland projects, more states coming soon
-        </div>
         <p class="hero-eyebrow">For Australian Homeowners</p>
         <h1>Your Home.<br><em>Your Standards.</em></h1>
         <p class="hero-sub">Frank's here to make sure you know the rules, ask the right questions, and actually get what you're paying for.</p>
@@ -883,6 +897,14 @@
         </svg>
     </a>
 </section>
+
+<!-- ===== BETA BANNER ===== -->
+<div class="beta-banner">
+    <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Beta now open to Queensland projects, more states coming soon
+    </div>
+</div>
 
 <!-- ===== PILLARS ===== -->
 <section class="pillars" id="pillars">
