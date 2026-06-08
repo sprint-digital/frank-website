@@ -146,7 +146,7 @@
 
         /* ===== HERO ===== */
         .hero {
-            min-height: 100vh;
+            min-height: 86vh;
             background: var(--charcoal);
             display: grid;
             grid-template-columns: 1fr 260px;
@@ -249,27 +249,33 @@
 
         .hero-scroll {
             position: absolute;
-            bottom: 2.5rem;
-            left: 5vw;
+            bottom: 2.25rem;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 2px solid rgba(237,227,208,0.3);
+            border-radius: 50%;
             color: var(--cream-dark);
-            font-size: 0.68rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+            text-decoration: none;
+            transition: border-color 0.2s ease, color 0.2s ease;
+            animation: scroll-bounce 2.2s ease-in-out infinite;
         }
-        .hero-scroll-line {
-            width: 1px;
-            height: 44px;
-            background: linear-gradient(to bottom, var(--cream-dark), transparent);
-            animation: scroll-pulse 2s ease-in-out infinite;
+        .hero-scroll:hover {
+            border-color: var(--cream);
+            color: var(--cream);
         }
-        @keyframes scroll-pulse {
-            0%, 100% { opacity: 0.35; }
-            50% { opacity: 1; }
+        .hero-scroll svg {
+            width: 16px;
+            height: 16px;
+        }
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+            50% { transform: translateX(-50%) translateY(7px); opacity: 1; }
         }
 
         /* ===== PILLARS ===== */
@@ -871,10 +877,15 @@
     <div class="hero-mark">
         <img src="assets/images/frank-icon.png" alt="Frank" onerror="this.style.display='none'">
     </div>
+    <a href="#pillars" class="hero-scroll" aria-label="Scroll down to learn more">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+        </svg>
+    </a>
 </section>
 
 <!-- ===== PILLARS ===== -->
-<section class="pillars">
+<section class="pillars" id="pillars">
     <div class="container">
         <h2 class="pillars-title">How Frank Helps</h2>
         <div class="pillars-grid">
